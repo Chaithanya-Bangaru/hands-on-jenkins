@@ -6,11 +6,11 @@ pipeline {
         echo 'Building...'
       }
     }
-    stage('Test Firefox') {
+    stage('Test') {
       parallel {
         stage('Test Firefox') {
           steps {
-            echo 'TF; exit 0'
+            echo 'TF'
           }
         }
         stage('Test Chrome') {
@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Test Edge') {
           steps {
-            echo 'te
+            echo 'te'
           }
         }
       }
