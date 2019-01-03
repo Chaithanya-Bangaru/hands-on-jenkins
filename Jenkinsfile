@@ -10,12 +10,12 @@ pipeline {
       parallel {
         stage('Test Firefox') {
           steps {
-            echo 'TF'
+            echo 'TF; Exit /B 2'
           }
         }
         stage('Test Chrome') {
           steps {
-            echo 'TC; Exit /B 5'
+            echo 'TC'
           }
         }
         stage('Test Edge') {
