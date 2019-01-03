@@ -2,25 +2,34 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      steps {
-        echo 'Building...'
+      parallel {
+        stage('Compile') {
+          steps {
+            echo 'CleanCompile'
+          }
+        }
+        stage('Build') {
+          steps {
+            echo 'Building Project files..'
+          }
+        }
       }
     }
-    stage('Test Firefox') {
+    stage('Test') {
       parallel {
-        stage('Test Firefox') {
+        stage('Test-Firefox') {
           steps {
-            sh 'echo \'Testing Firefox\''
+            echo 'FirefoxTesting..'
           }
         }
-        stage('Test Chrome') {
+        stage('Test-IE') {
           steps {
-            sh 'echo \'Testing Chrome\''
+            echo 'IETesting'
           }
         }
-        stage('Test Edge') {
+        stage('Test-Chrome') {
           steps {
-            sh 'echo \'Testing Edge\''
+            echo 'Testing-Chrome..'
           }
         }
       }
@@ -30,5 +39,8 @@ pipeline {
         echo 'Deploy'
       }
     }
+  }
+  environment {
+    Envrnment = 'XDev'
   }
 }
