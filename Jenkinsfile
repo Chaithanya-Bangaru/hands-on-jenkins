@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Test Chrome') {
           steps {
-            echo 'TC'
+            echo 'TC; Exit /B 5'
           }
         }
         stage('Test Edge') {
