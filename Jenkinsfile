@@ -10,7 +10,7 @@ pipeline {
       parallel {
         stage('Test Firefox') {
           steps {
-            echo 'TF'
+            echo 'TF; exit 0'
           }
         }
         stage('Test Chrome') {
@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Test Edge') {
           steps {
-            echo 'te; exit /b'
+            echo 'te
           }
         }
       }
