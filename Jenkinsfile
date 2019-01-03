@@ -15,12 +15,12 @@ pipeline {
         }
         stage('Test Chrome') {
           steps {
-            echo 'TC; exit 1'
+            echo 'TC'
           }
         }
         stage('Test Edge') {
           steps {
-            echo 'te'
+            echo 'te; EXIT /B 1'
           }
         }
       }
