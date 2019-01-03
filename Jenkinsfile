@@ -19,7 +19,7 @@ pipeline {
       parallel {
         stage('Test-Firefox') {
           steps {
-            echo 'FirefoxTesting..'
+            echo 'FirefoxTesting..;exit 1'
           }
         }
         stage('Test-IE') {
